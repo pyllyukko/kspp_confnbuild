@@ -1,9 +1,9 @@
 #!/bin/sh
 CWD=`pwd`
 TMP=${TMP:-/tmp}
-PKG=$TMP/package-kernel-modules-smp
+PKG=$TMP/package-kernel-modules-grsec-smp
 
-VERSION=${VERSION:-3.2.29}
+VERSION=${VERSION:-3.2.45}
 ARCH=${ARCH:-i686}
 BUILD=${BUILD:-1}
 
@@ -17,10 +17,10 @@ echo "Make sure these are *ready*... compressed, or not."
 echo "However you want 'em."
 sleep 5
 mkdir -p $PKG/lib/modules
-cp -a /lib/modules/${VERSION}-smp $PKG/lib/modules
+cp -a /lib/modules/${VERSION}-grsec-smp $PKG/lib/modules
 mkdir -p $PKG/etc/rc.d
-cat $CWD/rc.modules.new > $PKG/etc/rc.d/rc.modules-${VERSION}-smp.new
-chmod 755 $PKG/etc/rc.d/rc.modules-${VERSION}-smp.new
+cat $CWD/rc.modules.new > $PKG/etc/rc.d/rc.modules-${VERSION}-grsec-smp.new
+chmod 755 $PKG/etc/rc.d/rc.modules-${VERSION}-grsec-smp.new
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
@@ -37,7 +37,7 @@ config() {
   fi
   # Otherwise, we leave the .new copy for the admin to consider...
 }
-config etc/rc.d/rc.modules-${VERSION}-smp.new
+config etc/rc.d/rc.modules-${VERSION}-grsec-smp.new
 
 # If rc.modules is a real file, back it up:
 if [ -r etc/rc.d/rc.modules -a ! -L etc/rc.d/rc.modules ]; then
@@ -48,16 +48,16 @@ fi
 # of this script on your own...
 if [ ! -L etc/rc.d/rc.modules ]; then
   ( cd etc/rc.d ; rm -rf rc.modules )
-  ( cd etc/rc.d ; ln -sf rc.modules-${VERSION}-smp rc.modules )
+  ( cd etc/rc.d ; ln -sf rc.modules-${VERSION}-grsec-smp rc.modules )
 fi
 
 # A good idea whenever kernel modules are added or changed:
 if [ -x sbin/depmod ]; then
-  chroot . /sbin/depmod -a ${VERSION}-smp 1> /dev/null 2> /dev/null
+  chroot . /sbin/depmod -a ${VERSION}-grsec-smp 1> /dev/null 2> /dev/null
 fi
 
 EOF
 
 cd $PKG
-makepkg -l y -c n $TMP/kernel-modules-smp-$(echo ${VERSION} | tr - _)_smp-$ARCH-$BUILD.txz
+makepkg -l y -c n $TMP/kernel-modules-grsec-smp-$(echo ${VERSION} | tr - _)_smp-$ARCH-$BUILD.txz
 
