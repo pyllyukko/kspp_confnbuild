@@ -12,7 +12,7 @@ if [ ! -d $TMP ]; then
 fi
 rm -rf $PKG
 mkdir -p $PKG
-echo "Using /lib/modules/${VERSION}-smp/"
+echo "Using /lib/modules/${VERSION}-grsec-smp/"
 echo "Make sure these are *ready*... compressed, or not."
 echo "However you want 'em."
 sleep 5
