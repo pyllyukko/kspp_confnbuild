@@ -3,7 +3,7 @@ CWD=`pwd`
 TMP=${TMP:-/tmp}
 PKG=$TMP/package-kernel-modules-grsec-smp
 
-VERSION=${VERSION:-3.2.45}
+VERSION=${VERSION:-3.2.47}
 ARCH=${ARCH:-i686}
 BUILD=${BUILD:-1}
 
