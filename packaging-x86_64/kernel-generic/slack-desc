@@ -5,15 +5,15 @@
 # make exactly 11 lines for the formatting to be correct.  It's also
 # customary to leave one space after the ':'.
 
-              |-----handy-ruler------------------------------------------------------|
-kernel-generic: kernel-generic (a general purpose SMP Linux kernel)
-kernel-generic:
-kernel-generic: This is a Linux kernel with built-in support for most disk
-kernel-generic: controllers.  To use filesystems, or to load support for a SCSI or
-kernel-generic: other controller, then you'll need to load one or more kernel
-kernel-generic: modules using an initial ramdisk, or initrd.  For more information
-kernel-generic: about creating an initrd, see the README.initrd file in the /boot
-kernel-generic: directory.
-kernel-generic:
-kernel-generic: SMP is "Symmetric multiprocessing", or multiple CPU/core support.
-kernel-generic:
+                    |-----handy-ruler------------------------------------------------------|
+kernel-generic-grsec: kernel-generic-grsec (a general purpose SMP Linux kernel)
+kernel-generic-grsec:
+kernel-generic-grsec: This is a Linux kernel with built-in support for most disk
+kernel-generic-grsec: controllers.  To use filesystems, or to load support for a SCSI or
+kernel-generic-grsec: other controller, then you'll need to load one or more kernel
+kernel-generic-grsec: modules using an initial ramdisk, or initrd.  For more information
+kernel-generic-grsec: about creating an initrd, see the README.initrd file in the /boot
+kernel-generic-grsec: directory.
+kernel-generic-grsec:
+kernel-generic-grsec: SMP is "Symmetric multiprocessing", or multiple CPU/core support.
+kernel-generic-grsec:
