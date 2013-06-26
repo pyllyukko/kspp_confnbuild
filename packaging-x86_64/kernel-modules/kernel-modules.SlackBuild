@@ -21,26 +21,26 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-VERSION=${VERSION:-3.2.29}
+VERSION=${VERSION:-3.2.45}
 ARCH=${ARCH:-x86_64}
 BUILD=${BUILD:-1}
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp}
-PKG=$TMP/package-kernel-modules
+PKG=$TMP/package-kernel-modules-grsec
 
 rm -rf $PKG
 mkdir -p $TMP $PKG
 
-echo "Using /lib/modules/${VERSION}/"
+echo "Using /lib/modules/${VERSION}-grsec/"
 echo "Make sure these are *ready*... compressed, or not."
 echo "However you want 'em."
 sleep 5
 mkdir -p $PKG/lib/modules
-cp -a /lib/modules/${VERSION} $PKG/lib/modules
+cp -a /lib/modules/${VERSION}-grsec $PKG/lib/modules
 mkdir -p $PKG/etc/rc.d
-cat $CWD/rc.modules.new > $PKG/etc/rc.d/rc.modules-${VERSION}.new
-chmod 755 $PKG/etc/rc.d/rc.modules-${VERSION}.new
+cat $CWD/rc.modules.new > $PKG/etc/rc.d/rc.modules-${VERSION}-grsec.new
+chmod 755 $PKG/etc/rc.d/rc.modules-${VERSION}-grsec.new
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
@@ -58,7 +58,7 @@ config() {
   fi
   # Otherwise, we leave the .new copy for the admin to consider...
 }
-config etc/rc.d/rc.modules-${VERSION}.new
+config etc/rc.d/rc.modules-${VERSION}-grsec.new
 
 # If rc.modules is a real file, back it up:
 if [ -r etc/rc.d/rc.modules -a ! -L etc/rc.d/rc.modules ]; then
@@ -69,16 +69,16 @@ fi
 # of this script on your own...
 if [ ! -L etc/rc.d/rc.modules ]; then
   ( cd etc/rc.d ; rm -rf rc.modules )
-  ( cd etc/rc.d ; ln -sf rc.modules-${VERSION} rc.modules )
+  ( cd etc/rc.d ; ln -sf rc.modules-${VERSION}-grsec rc.modules )
 fi
 
 # A good idea whenever kernel modules are added or changed:
 if [ -x sbin/depmod ]; then
-  chroot . /sbin/depmod -a ${VERSION} 1> /dev/null 2> /dev/null
+  chroot . /sbin/depmod -a ${VERSION}-grsec 1> /dev/null 2> /dev/null
 fi
 
 EOF
 
 cd $PKG
-/sbin/makepkg -l y -c n $TMP/kernel-modules-$(echo ${VERSION} | tr - _)-$ARCH-$BUILD.txz
+/sbin/makepkg -l y -c n $TMP/kernel-modules-grsec-$(echo ${VERSION} | tr - _)-$ARCH-$BUILD.txz
 
