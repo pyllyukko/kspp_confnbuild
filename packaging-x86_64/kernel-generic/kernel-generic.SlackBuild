@@ -22,8 +22,8 @@
 
 
 KERNNAME=generic-grsec
-VERSION=${VERSION:-3.2.47}
-GRSEC_VERSION="2.9.1-${VERSION}-201306231441"
+VERSION=${VERSION:-3.14.18}
+GRSEC_VERSION="3.0-${VERSION}-201409082127"
 ARCH=${ARCH:-x86_64}
 KARCH=${KARCH:-x86}
 BUILD=${BUILD:-1}
@@ -72,21 +72,20 @@ fi
 
 cat << EOF
 Building kernel-$KERNNAME-${VERSION}-$ARCH-$BUILD.txz
-using these source files.  Please check and then hit 
-enter to make the package.
+using these source files:
 
 KERNEL = $KERNEL
 SYSMAP = $SYSMAP
 CONFIG = $CONFIG
 
 EOF
-read junk;
 
 rm -rf $PKG
 mkdir -p $PKG
 mkdir -p $PKG/boot
 cp $KERNEL $PKG/boot/vmlinuz-$KERNNAME-${VERSION}
 ( cd $PKG/boot ; ln -sf vmlinuz-$KERNNAME-${VERSION} vmlinuz )
+( cd $PKG/boot ; ln -sf vmlinuz-$KERNNAME-${VERSION} vmlinuz-generic )
 cp $SYSMAP $PKG/boot/System.map-$KERNNAME-${VERSION}
 ( cd $PKG/boot ; ln -sf System.map-$KERNNAME-${VERSION} System.map )
 cp $CONFIG $PKG/boot/config-$KERNNAME-${VERSION}
