@@ -25,9 +25,9 @@ The packaging script for the kernel modules requires that you first run *make mo
 Notes
 -----
 
-If you're running X11, you need to disable the [CONFIG_GRKERNSEC_IO](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Disable_privileged_I.2FO).
+If you're running X11, you need to disable the [CONFIG\_GRKERNSEC\_IO](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Disable_privileged_I.2FO).
 
-If you're running a desktop in general, you might want to change the *Usage Type* from *Server* to *Desktop*.
+If you're running a desktop in general, you might want to change the [Usage Type](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Usage_Type) from [Server](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Server) to [Desktop](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Desktop).
 
 You can get the *paxctl* and *gradm* tools from [SBo](http://slackbuilds.org/):
   * http://slackbuilds.org/repository/14.1/system/paxctl/
