@@ -43,3 +43,7 @@ You can get the *paxctl* and *gradm* tools from [SBo](http://slackbuilds.org/):
     <td><a href="https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Reject_all_USB_devices_not_connected_at_boot">CONFIG_GRKERNSEC_DENYUSB_FORCE</a></td><td>This option might be good for servers</td>
   </tr>
 </table>
+
+TODO
+----
+* Get grsecurity version from **include/linux/gracl.h**
