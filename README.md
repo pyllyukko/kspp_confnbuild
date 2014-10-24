@@ -25,6 +25,8 @@ The packaging script for the kernel modules requires that you first run *make mo
 Notes
 -----
 
+It's quite hard to try to keep up with grsecurity (and with that, the Linux kernel) versions and make separate configs for x86/x86_64 and generic/huge kernels. That's why this repository might be a mess from time to time :) The safest bet is, that the most recent grsec is available at least for the x86_64 generic kernel. There are different branches for different kernel versions, so check the branches for the latest version, as the most recent is not necessarily merged into master.
+
 If you're running X11, you need to disable the [CONFIG\_GRKERNSEC\_IO](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Disable_privileged_I.2FO).
 
 If you're running a desktop in general, you might want to change the [Usage Type](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Usage_Type) from [Server](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Server) to [Desktop](https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Desktop).
