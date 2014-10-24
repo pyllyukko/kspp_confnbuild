@@ -33,6 +33,11 @@ You can get the *paxctl* and *gradm* tools from [SBo](http://slackbuilds.org/):
   * http://slackbuilds.org/repository/14.1/system/paxctl/
   * http://slackbuilds.org/repository/14.1/system/gradm/
 
+### Verify
+
+* grsecurity can be verified with Bradley Spengler's PGP key 0x44D1C0F82525FE49
+* Linux kernel can be verified with Greg Kroah-Hartman's PGP key [0x38DBBDC86092693E](https://www.kernel.org/signature.html)
+
 ### Other options to consider
 
 <table>
