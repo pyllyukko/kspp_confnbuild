@@ -54,4 +54,3 @@ You can get the *paxctl* and *gradm* tools from [SBo](http://slackbuilds.org/):
 TODO
 ----
 * Get grsecurity version from **include/linux/gracl.h**
-* The master branch should (try to) follow slackware-current
