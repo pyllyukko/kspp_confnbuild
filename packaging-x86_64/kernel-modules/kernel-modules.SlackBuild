@@ -22,6 +22,7 @@
 
 
 VERSION=${VERSION:-3.14.23}
+GRSEC_VERSION="3.0-${VERSION}-201411091053"
 ARCH=${ARCH:-x86_64}
 BUILD=${BUILD:-1}
 
@@ -80,5 +81,5 @@ fi
 EOF
 
 cd $PKG
-/sbin/makepkg -l y -c n $TMP/kernel-modules-grsec-$(echo ${VERSION} | tr - _)-$ARCH-$BUILD.txz
+/sbin/makepkg -l y -c n $TMP/kernel-modules-grsec-$(echo ${GRSEC_VERSION} | tr - _)-$ARCH-$BUILD.txz
 

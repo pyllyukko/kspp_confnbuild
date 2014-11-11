@@ -4,6 +4,7 @@ TMP=${TMP:-/tmp}
 PKG=$TMP/package-kernel-modules-grsec-smp
 
 VERSION=${VERSION:-3.14.23}
+GRSEC_VERSION="3.0-${VERSION}-201411091053"
 ARCH=${ARCH:-i686}
 BUILD=${BUILD:-1}
 
@@ -59,5 +60,5 @@ fi
 EOF
 
 cd $PKG
-makepkg -l y -c n $TMP/kernel-modules-grsec-smp-$(echo ${VERSION} | tr - _)_smp-$ARCH-$BUILD.txz
+makepkg -l y -c n $TMP/kernel-modules-grsec-smp-$(echo ${GRSEC_VERSION} | tr - _)_smp-$ARCH-$BUILD.txz
 
