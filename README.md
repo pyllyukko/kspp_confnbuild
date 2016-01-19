@@ -1,6 +1,8 @@
 grsecurity kernel build and packaging scripts for Slackware Linux
 =================================================================
 
+**WARNING**: This project is stalled as of grsecurity's [announcement](https://grsecurity.net/announce.php)
+
 Original kernel sources for Slackware available here:
   * ftp://ftp.slackware.com/pub/slackware/slackware-current/source/k/
   * ftp://ftp.slackware.com/pub/slackware/slackware64-current/source/k/ (for x86_64)
