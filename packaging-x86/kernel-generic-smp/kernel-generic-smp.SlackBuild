@@ -6,8 +6,8 @@ PKG=/tmp/package-kernel
 # Fill this stuff in:
 
 KERNNAME=generic-grsec-smp
-VERSION=${VERSION:-3.14.33}
-GRSEC_VERSION="3.1-${VERSION}-201502222137"
+VERSION=${VERSION:-4.4.2}
+GRSEC_VERSION="3.1-${VERSION}-201602182048"
 ARCH=${ARCH:-i686}
 BUILD=${BUILD:-1}
 
