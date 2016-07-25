@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/x86 4.6.3 Kernel Configuration
+# Linux/x86 4.6.4 Kernel Configuration
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -7194,7 +7194,6 @@ CONFIG_PAX_MPROTECT=y
 # CONFIG_PAX_MPROTECT_COMPAT is not set
 # CONFIG_PAX_ELFRELOCS is not set
 CONFIG_PAX_KERNEXEC=y
-CONFIG_PAX_KERNEXEC_PLUGIN_METHOD=""
 CONFIG_PAX_KERNEXEC_MODULE_TEXT=8
 
 #
