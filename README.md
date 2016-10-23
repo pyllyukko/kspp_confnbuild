@@ -46,7 +46,7 @@ You can get the ```paxctl``` and ```gradm``` tools from [SBo](http://slackbuilds
 
 | Option                                                                                                                                                                    | Note                                  |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| CONFIG\_GRKERNSEC\_DENYUSB\_FORCE                                                                                                                                            | This option might be good for servers |
+| CONFIG_GRKERNSEC_DENYUSB_FORCE                                                                                                                                            | This option might be good for servers |
 
 TODO
 ----
