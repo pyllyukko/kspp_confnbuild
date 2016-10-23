@@ -51,6 +51,9 @@ You can get the ```paxctl``` and ```gradm``` tools from [SBo](http://slackbuilds
   <tr>
     <td><a href="https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Reject_all_USB_devices_not_connected_at_boot">CONFIG_GRKERNSEC_DENYUSB_FORCE</a></td><td>This option might be good for servers</td>
   </tr>
+  <tr>
+    <td><a href="https://en.wikibooks.org/wiki/Grsecurity/Appendix/Grsecurity_and_PaX_Configuration_Options#Sysfs.2Fdebugfs_restriction">CONFIG_GRKERNSEC_SYSFS_RESTRICT</a></td><td>You need to disable this if you want to use PulseAudio, otherwise the sound card detection will not work</td>
+  </tr>
 </table>
 
 TODO
