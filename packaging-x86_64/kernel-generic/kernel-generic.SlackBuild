@@ -21,9 +21,8 @@
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-KERNNAME=generic-grsec
-VERSION=${VERSION:-4.9.20}
-GRSEC_VERSION="3.1-${VERSION}-201703310823"
+KERNNAME=generic-kspp
+VERSION=${VERSION:-4.4.111}
 ARCH=${ARCH:-x86_64}
 KARCH=${KARCH:-x86}
 BUILD=${BUILD:-1}
@@ -96,5 +95,5 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 
 # Build the package:
 cd $PKG
-/sbin/makepkg -l y -c n $TMP/kernel-$KERNNAME-$(echo ${GRSEC_VERSION} | tr - _)-$ARCH-$BUILD.txz
+/sbin/makepkg -l y -c n $TMP/kernel-$KERNNAME-$(echo ${VERSION} | tr - _)-$ARCH-$BUILD.txz
 
