@@ -27,6 +27,7 @@ Notes
 -----
 
 * There are different branches for different kernel versions, so check the branches for the latest version, as the most recent is not necessarily merged into master.
+* You can check that the configurations are correct with [kconfig-hardened-check](https://github.com/a13xp0p0v/kconfig-hardened-check)
 
 ### Verify
 
