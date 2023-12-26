@@ -45,7 +45,12 @@ CONFIG_GCC_PLUGIN_RANDSTRUCT=y
 # CONFIG_GCC_PLUGIN_RANDSTRUCT_PERFORMANCE is not set
 ```
 
-And also the 32-bit stuff.
+And also the [32-bit stuff](http://www.kernsec.org/wiki/index.php/Kernel_Self_Protection_Project/Recommended_Settings#x86_64):
+
+* `CONFIG_COMPAT`
+* `CONFIG_IA32_EMULATION`
+* `CONFIG_X86_X32`
+* `CONFIG_MODIFY_LDT_SYSCALL`
 
 ### Verify
 
