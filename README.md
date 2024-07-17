@@ -50,7 +50,6 @@ And also the [32-bit stuff](http://www.kernsec.org/wiki/index.php/Kernel_Self_Pr
 * `CONFIG_COMPAT`
 * `CONFIG_IA32_EMULATION`
 * `CONFIG_X86_X32`
-* `CONFIG_MODIFY_LDT_SYSCALL`
 
 ### Verify
 
