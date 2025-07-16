@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright 2018, 2020  Patrick J. Volkerding, Sebeka, Minnesota, USA
+# Copyright 2018, 2020, 2024  Patrick J. Volkerding, Sebeka, Minnesota, USA
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -118,7 +118,7 @@ fi
   echo "Running make oldconfig..."
   make oldconfig
   echo "Building kernel..."
-  make $NUMJOBS bzImage || make bzImage || exit 1
+  make $NUMJOBS bzImage || make $NUMJOBS bzImage || make $NUMJOBS bzImage || make $NUMJOBS bzImage || exit 1
   # Output files to a directory, if requested:
   if [ ! -z "${KERNEL_OUTPUT_DIRECTORY}" ]; then
     echo "Copying files to ${KERNEL_OUTPUT_DIRECTORY}..."
