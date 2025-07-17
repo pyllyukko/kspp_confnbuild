@@ -42,7 +42,13 @@ BUILD=${BUILD:-1}
 # data to the modules which we don't actually need. We'll strip debugging
 # information from kernel modules by default. If you are building a debug
 # kernel and wish to retain this data, export the variable below set to "NO".
-STRIP_DEBUG=${STRIP_DEBUG:-YES}
+#
+# https://www.kernel.org/doc/html/latest/admin-guide/module-signing.html:
+#
+# "Signed modules are BRITTLE as the signature is outside of the defined ELF
+# container. Thus they MAY NOT be stripped once the signature is computed and
+# attached."
+STRIP_DEBUG=${STRIP_DEBUG:-NO}
 
 if [ ! -r "${KERNEL_CONFIG}" ]; then
   echo "Error: the KERNEL_CONFIG environment variable needs to be set to the"
