@@ -3,7 +3,7 @@ KSPP kernel build and packaging scripts for Slackware Linux
 
 See:
 
-* [Kernel Self Protection Project](https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project)
+* [Kernel Self Protection Project](https://kspp.github.io/)
 * [Kernel Self-Protection](https://www.kernel.org/doc/html/latest/security/self-protection.html)
 
 How to use?
