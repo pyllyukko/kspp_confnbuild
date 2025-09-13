@@ -19,7 +19,10 @@ jobs:
       - name: Show options that are not according to KSPP
         run: |
           sudo apt-get install jq
+          echo '[*] Failed settings:'
           jq -C '.[] | select(.decision == "kspp" and .check_result_bool == false) | .option_name' ./kernel-hardening-checker.json
+          echo '[*] Failed settings that are not deliberately set and are present in our config:'
+          for setting in $(jq -r '.[] | select(.decision == "kspp" and .check_result_bool == false) | .option_name' ./kernel-hardening-checker.json | grep -v '^\(CONFIG_STATIC_USERMODEHELPER\|CONFIG_GCC_PLUGIN_RANDSTRUCT\|CONFIG_COMPAT\|CONFIG_IA32_EMULATION\|CONFIG_X86_X32\|CONFIG_MODULES\)$'); do grep "\b${setting}\b" config-x86_64/config-generic-*.x64 || true; done
       - name: Archive results
         uses: actions/upload-artifact@v4
         with:

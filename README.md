@@ -45,6 +45,11 @@ CONFIG_GCC_PLUGIN_RANDSTRUCT=y
 # CONFIG_GCC_PLUGIN_RANDSTRUCT_PERFORMANCE is not set
 ```
 
+```
+# Keep root from altering kernel memory via loadable modules.
+# CONFIG_MODULES is not set
+```
+
 And also the [32-bit stuff](http://www.kernsec.org/wiki/index.php/Kernel_Self_Protection_Project/Recommended_Settings#x86_64):
 
 * `CONFIG_COMPAT`
