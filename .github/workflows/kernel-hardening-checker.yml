@@ -1,0 +1,27 @@
+name: kernel-hardening-checker
+on: [push, pull_request]
+
+jobs:
+  check-config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Clone kernel-hardening-checker
+        uses: actions/checkout@v3
+        with:
+          repository: 'a13xp0p0v/kernel-hardening-checker'
+          path: 'kernel-hardening-checker'
+      - name: Run kernel-hardening-checker
+        run: |
+          python3 kernel-hardening-checker/bin/kernel-hardening-checker -c config-x86_64/config-generic-*.x64
+          python3 kernel-hardening-checker/bin/kernel-hardening-checker -m json -c config-x86_64/config-generic-*.x64 1>kernel-hardening-checker.json
+      - name: Show options that are not according to KSPP
+        run: |
+          sudo apt-get install jq
+          jq -C '.[] | select(.decision == "kspp" and .check_result_bool == false) | .option_name' ./kernel-hardening-checker.json
+      - name: Archive results
+        uses: actions/upload-artifact@v4
+        with:
+          name: kernel-hardening-checker.json
+          path: ./kernel-hardening-checker.json
