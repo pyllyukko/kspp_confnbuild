@@ -1,0 +1,13 @@
+name: diff
+on: [push, pull_request]
+env:
+  ANSIBLE_FORCE_COLOR: '1'
+jobs:
+  diff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Diff against Slackware's upstream config
+        run: |
+          bash ./diff.sh
