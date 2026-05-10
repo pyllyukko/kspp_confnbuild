@@ -9473,7 +9473,7 @@ CONFIG_SECURITY_LANDLOCK=y
 # CONFIG_IMA_SECURE_AND_OR_TRUSTED_BOOT is not set
 # CONFIG_DEFAULT_SECURITY_APPARMOR is not set
 CONFIG_DEFAULT_SECURITY_DAC=y
-CONFIG_LSM="lockdown,yama,loadpin,safesetid,integrity"
+CONFIG_LSM="lockdown,yama,loadpin,safesetid,integrity,landlock"
 
 #
 # Kernel hardening options
