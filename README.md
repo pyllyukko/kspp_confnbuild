@@ -50,6 +50,8 @@ CONFIG_GCC_PLUGIN_RANDSTRUCT=y
 # CONFIG_MODULES is not set
 ```
 
+`CONFIG_DEFAULT_MMAP_MIN_ADDR` is higher than KSPP's recommended value of `65536`.
+
 And also the [32-bit stuff](http://www.kernsec.org/wiki/index.php/Kernel_Self_Protection_Project/Recommended_Settings#x86_64):
 
 * `CONFIG_COMPAT`
