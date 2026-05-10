@@ -11,4 +11,8 @@ else
 fi
 
 upstream_version="${upstream_linux#linux-}"
-diff --color=always <(curl "ftp://ftp.slackware.com/pub/slackware/slackware64-15.0/patches/source/${upstream_linux}/kernel-configs/config-generic-${upstream_version}.x64") config-x86_64/config-generic-*.x64
+diff --color=always \
+  <(curl "ftp://ftp.slackware.com/pub/slackware/slackware64-15.0/patches/source/${upstream_linux}/kernel-configs/config-generic-${upstream_version}.x64") \
+  config-x86_64/config-generic-*.x64
+
+exit 0
